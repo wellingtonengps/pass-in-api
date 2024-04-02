@@ -5,4 +5,4 @@ CREATE TABLE attendees (
     event_id VARCHAR(255) NOT NULL,
     create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT attendees_event_id_fk FOREIGN KEY (event_id) REFERENCES events (id) ON DELETE RESTRICT ON UPDATE CASCADE
-)
+);
