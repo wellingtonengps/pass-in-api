@@ -1,4 +1,4 @@
-SET DATABASE UNIQUE NAME HSQLDB8EA1817FF8
+SET DATABASE UNIQUE NAME HSQLDB8EA3F71ECA
 SET DATABASE DEFAULT RESULT MEMORY ROWS 0
 SET DATABASE EVENT LOG LEVEL 0
 SET DATABASE TRANSACTION CONTROL LOCKS
@@ -29,7 +29,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 4178
+SET FILES CHECK 298
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -54,9 +54,9 @@ GRANT DBA TO SA
 SET SCHEMA SYSTEM_LOBS
 INSERT INTO BLOCKS VALUES(0,2147483647,0)
 SET SCHEMA PUBLIC
-INSERT INTO "flyway_schema_history" VALUES(1,'1','create-table-events','SQL','V1__create-table-events.sql',1297544301,'SA','2024-04-02 22:10:03.118868',4,'1')
-INSERT INTO "flyway_schema_history" VALUES(2,'2','create-table-attendees','SQL','V2__create-table-attendees.sql',-228796736,'SA','2024-04-02 22:10:03.139589',2,'1')
-INSERT INTO "flyway_schema_history" VALUES(3,'3','create-table-checkins','SQL','V3__create-table-checkins.sql',-442136230,'SA','2024-04-02 22:10:03.151565',2,'1')
-INSERT INTO "flyway_schema_history" VALUES(4,'4','create-indexes','SQL','V4__create-indexes.sql',553901455,'SA','2024-04-02 22:10:03.167151',2,'1')
-INSERT INTO EVENTS VALUES('0b6e29c8-f0e5-4962-b304-d602cb48d5fb','Rocketseat NLW','Aprenda Java de forma gratuita','rocketseat-nlw',500)
-INSERT INTO EVENTS VALUES('877f792e-a0d1-4a7d-ba33-5e9c871f8407','Rocketseat NLW1','Aprenda Java de forma gratuita','rocketseat-nlw1',500)
+INSERT INTO "flyway_schema_history" VALUES(1,'1','create-table-events','SQL','V1__create-table-events.sql',1297544301,'SA','2024-04-03 09:37:45.590816',3,'1')
+INSERT INTO "flyway_schema_history" VALUES(2,'2','create-table-attendees','SQL','V2__create-table-attendees.sql',-228796736,'SA','2024-04-03 09:37:45.623724',2,'1')
+INSERT INTO "flyway_schema_history" VALUES(3,'3','create-table-checkins','SQL','V3__create-table-checkins.sql',-442136230,'SA','2024-04-03 09:37:45.642672',3,'1')
+INSERT INTO "flyway_schema_history" VALUES(4,'4','create-indexes','SQL','V4__create-indexes.sql',553901455,'SA','2024-04-03 09:37:45.668602',6,'1')
+INSERT INTO EVENTS VALUES('0b8014a4-7d8c-4f74-a126-fec979d113a7','Rocketseat NLW','Aprenda Java de forma gratuita','rocketseat-nlw',500)
+INSERT INTO ATTENDEES VALUES('0b8014a4-7d8c-4f74-a126-fec979d113a7','Wellington Pereira','wellington.engps@gmail.com','0b8014a4-7d8c-4f74-a126-fec979d113a7',NULL)
