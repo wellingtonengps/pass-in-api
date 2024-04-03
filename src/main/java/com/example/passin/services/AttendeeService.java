@@ -1,6 +1,7 @@
 package com.example.passin.services;
 
 import com.example.passin.domain.attendee.Attendee;
+import com.example.passin.domain.attendee.exceptions.AttendeeAlreadyExistException;
 import com.example.passin.domain.chekin.CheckIn;
 import com.example.passin.dto.attendee.AttendeesDetails;
 import com.example.passin.dto.attendee.AttendeesListResponseDTO;
@@ -36,5 +37,17 @@ public class AttendeeService {
         }).toList();
 
         return new AttendeesListResponseDTO(attendeesDetailsList);
+    }
+
+    public void verifyAttendeeSubscription(String email, String eventId){
+        Optional<Attendee> isAttendeeRegistered = this.attendeeRepository.findByEventIdAndEmail(eventId, email);
+
+        if(isAttendeeRegistered.isPresent()){
+            throw new AttendeeAlreadyExistException("Attendee already registered");
+        }
+    }
+
+    public Attendee registerAttendee(Attendee attendee){
+        return this.attendeeRepository.save(attendee);
     }
 }
