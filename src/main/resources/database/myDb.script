@@ -29,7 +29,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 4124
+SET FILES CHECK 5666
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -59,9 +59,12 @@ INSERT INTO "flyway_schema_history" VALUES(2,'2','create-table-attendees','SQL',
 INSERT INTO "flyway_schema_history" VALUES(3,'3','create-table-checkins','SQL','V3__create-table-checkins.sql',-442136230,'SA','2024-04-03 09:37:45.642672',3,'1')
 INSERT INTO "flyway_schema_history" VALUES(4,'4','create-indexes','SQL','V4__create-indexes.sql',553901455,'SA','2024-04-03 09:37:45.668602',6,'1')
 INSERT INTO EVENTS VALUES('0b8014a4-7d8c-4f74-a126-fec979d113a7','Rocketseat NLW','Aprenda Java de forma gratuita','rocketseat-nlw',500)
+INSERT INTO EVENTS VALUES('84bbc665-5362-4ecb-bc08-09c21585a023','Rocketseat NLW3','Aprenda Java de forma gratuita','rocketseat-nlw3',20)
 INSERT INTO EVENTS VALUES('f025a28a-3480-46d2-ae7f-4f3b3af8a7f3','Rocketseat NLW2','Aprenda Java de forma gratuita','rocketseat-nlw2',1)
 INSERT INTO ATTENDEES VALUES('0b8014a4-7d8c-4f74-a126-fec979d113a7','Wellington Pereira','wellington.engps@gmail.com','0b8014a4-7d8c-4f74-a126-fec979d113a7',NULL)
 INSERT INTO ATTENDEES VALUES('2bab9f5a-8023-4ee2-91c1-c6d65183006c','Wellington Silva','teste','f025a28a-3480-46d2-ae7f-4f3b3af8a7f3','2024-04-03 16:58:31.433441')
+INSERT INTO ATTENDEES VALUES('3c5866da-0843-4a2f-9bbc-c12ebd2afeef','WellingtonT','TesteT@gmail.com','84bbc665-5362-4ecb-bc08-09c21585a023','2024-04-11 17:45:37.471484')
 INSERT INTO ATTENDEES VALUES('784360f1-b054-4301-828e-703bda648f54','Wellington Pereira','teste1','0b8014a4-7d8c-4f74-a126-fec979d113a7','2024-04-03 16:59:45.139058')
+INSERT INTO ATTENDEES VALUES('822f32aa-ea1a-4694-b929-d6f5a5d794f4','Wellington','Teste@gmail.com','84bbc665-5362-4ecb-bc08-09c21585a023','2024-04-11 17:35:16.679745')
 INSERT INTO ATTENDEES VALUES('c8507929-2277-4518-a67d-24f8217442d7','Wellington Silva','teste','0b8014a4-7d8c-4f74-a126-fec979d113a7','2024-04-03 16:55:36.347891')
 INSERT INTO CHECK_INS VALUES(0,'2024-04-03 17:23:06.710652','c8507929-2277-4518-a67d-24f8217442d7')
