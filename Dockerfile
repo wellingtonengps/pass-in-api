@@ -1,13 +1,16 @@
-FROM ubuntu:rolling AS base
-RUN apt-get update && apt-get install -y openjdk-21-jdk && apt-get install -y maven
+FROM maven:3.8.7-openjdk-18-slim AS Build
 
-FROM base AS build
 WORKDIR /usr/src/app
-COPY . .
-RUN mvn clean package
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
 
-FROM ubuntu/jre:8-22.04_edge AS deploy
+RUN mvn package -DskipTests
+
+FROM eclipse-temurin:21.0.2_13-jre-alpine AS deploy
 WORKDIR /usr/src/app
-COPY --from=build /usr/src/app/target/*.jar .
+COPY --from=Build /usr/src/app/target/pass-in-0.0.1-SNAPSHOT.jar .
 
-ENTRYPOINT ["top", "-b"]
+EXPOSE 8080
+
+CMD ["java", "-jar", "pass-in-0.0.1-SNAPSHOT.jar"]

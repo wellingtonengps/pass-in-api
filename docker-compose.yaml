@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+
+  spring-boot-app:
+    build:
+      context: .
+    container_name: api-pass-in
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - passin
+
+  postgres:
+    image: postgres:16.2-alpine3.19
+    container_name: db-pass-in
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=J1WI81ypCJ
+      - POSTGRES_DB=pass-in
+    volumes:
+      - 'db:/var/lib/postgresql/data'
+    networks:
+      - passin
+
+networks:
+  passin:
+    driver: bridge
+
+volumes:
+  db:
