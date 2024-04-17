@@ -39,7 +39,11 @@ Inicie o servidor (necessário java 17 ou superior) e Maven 4.0.0
 
 A documentação foi criada utilizando swagger.
 
+<<<<<<< HEAD
 ```bash
+=======
+```http
+>>>>>>> origin/main
   http://localhost:8080/swagger-ui/index.html
 ```
 
@@ -69,6 +73,11 @@ A documentação foi criada utilizando swagger.
 
 Adicionar outro banco de dados (Postgres) e colocar o projeto em um conteiner Docker
 
+<<<<<<< HEAD
 - [x] Postgres
 - [x] Docker
+=======
+- [ ] Postgres
+- [ ] Docker
+>>>>>>> origin/main
     
