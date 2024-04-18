@@ -31,4 +31,6 @@ jobs:
 
       - name: Push docker image
         run: docker push wellingtondevps/pass-in-api:${{steps.generate_sha.outputs.sha}}
+             docker tag wellingtondevps/pass-in-api:${{steps.generate_sha.outputs.sha}} wellingtondevps/pass-in-api:latest
+             docker push wellingtondevps/pass-in-api:latest
 
