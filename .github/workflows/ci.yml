@@ -17,9 +17,18 @@ jobs:
       - name: Generate sha
         id: generate_sha
         run: |
-          SHA=$(echo $GITHUB_SHA | head -c1)
+          SHA=$(echo $GITHUB_SHA | head -c7)
           echo "SHA=$SHA" >> $GITHUB_OUTPUT
 
       - name: Build docker image
         run: docker build -t wellingtondevps/pass-in-api:${{steps.generate_sha.outputs.sha}} .
+
+      - name: Log into the container registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{secrets.DOCKERHUB_TOKENUSERNAME}}
+          password: ${{secrets.DOCKERHUB_TOKEN}}
+
+      - name: Push docker image
+        run: docker push wellingtondevps/pass-in-api:${{steps.generate_sha.outputs.sha}}
 
