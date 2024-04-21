@@ -18,10 +18,10 @@ spec:
     spec:
       containers:
       - name: passin
-        image: wellingtondevps/pass-in-api:713e52d
+        image: wellingtondevps/pass-in-api:ec45a31
         env:
           - name: DATASOURCE_URL
-            value: jdbc:postgresql://db-pass-in:5432/pass_in
+            value: "postgresql://doadmin:AVNS_Ys870DKdzxGx6v75zs7@pass-in-do-user-16389043-0.c.db.ondigitalocean.com:25060/pass-in?sslmode=require"
           - name: DATASOURCE_USERNAME
             value: ${DATASOURCE_USERNAME}
           - name: DATASOURCE_PASSWORD

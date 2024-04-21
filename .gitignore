@@ -2,8 +2,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-k8s
-k8s-old
+k8s/
+k8s-old/
 
 ### STS ###
 .apt_generated
