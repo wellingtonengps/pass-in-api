@@ -1,0 +1,17 @@
+expor port: kubectl port-forward -n passin-helm  service/passin-deploy 8080:80
+
+get service in namespace: kubectl get services -n passin-helm
+
+get node: kubectl get node -n passin-helm
+
+get pod: kubectl get pod -n passin-helm
+
+get log: kubectl logs <pod> -n passin-helm
+
+helm build: helm upgrade --install passin ./deploy -n passin-helm
+
+list pods in helm: helm list -n passin-helm
+
+create clusters k8s:  k3d cluster create pass-in-api --servers 2
+
+info clusters k8s: kubeclt cluster-info

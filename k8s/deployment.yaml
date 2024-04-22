@@ -18,16 +18,25 @@ spec:
     spec:
       containers:
       - name: passin
-        image: wellingtondevps/pass-in-api:ec45a31
+        image: wellingtondevps/pass-in-api:981ba0a
         env:
           - name: DATASOURCE_URL
-            value: "postgresql://doadmin:AVNS_Ys870DKdzxGx6v75zs7@pass-in-do-user-16389043-0.c.db.ondigitalocean.com:25060/pass-in?sslmode=require"
+            valueFrom:
+              secretKeyRef:
+                name: dn-connection
+                key: url
           - name: DATASOURCE_USERNAME
-            value: ${DATASOURCE_USERNAME}
+            valueFrom:
+              secretKeyRef:
+                name: dn-connection
+                key: username
           - name: DATASOURCE_PASSWORD
-            value: ${DATASOURCE_PASSWORD}
+            valueFrom:
+              secretKeyRef:
+                name: dn-connection
+                key: password
           - name: SPRING_JPA_HIBERNATE_DDL_AUTO
-            value: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+            value: "update"
         resources:
           requests:
             cpu: 200m
