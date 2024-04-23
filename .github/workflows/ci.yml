@@ -35,7 +35,7 @@ jobs:
           docker tag wellingtondevps/pass-in-api:${{steps.generate_sha.outputs.sha}} wellingtondevps/pass-in-api:latest
           docker push wellingtondevps/pass-in-api:latest
 
-      - name: Update image tag
+      - name: Update values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
           branch: main
