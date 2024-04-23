@@ -37,11 +37,20 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           env:
             - name: DATASOURCE_URL
-              value: "jdbc:postgresql://pass-in-do-user-16389043-0.c.db.ondigitalocean.com:25060/pass-in?sslmode=require"
+              valueFrom:
+                secretKeyRef:
+                  name: db-connection
+                  key: url
             - name: DATASOURCE_USERNAME
-              value: "doadmin"
+              valueFrom:
+                secretKeyRef:
+                  name: db-connection
+                  key: username
             - name: DATASOURCE_PASSWORD
-              value: "AVNS_Ys870DKdzxGx6v75zs7"
+              valueFrom:
+                secretKeyRef:
+                  name: db-connection
+                  key: password
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: "update"
           imagePullPolicy: {{ .Values.image.pullPolicy }}

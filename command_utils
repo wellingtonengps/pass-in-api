@@ -1,5 +1,7 @@
 expor port: kubectl port-forward -n passin-helm  service/passin-deploy 8080:80
 
+create namespace: kubectl create namespace passin-helm
+
 get service in namespace: kubectl get services -n passin-helm
 
 get node: kubectl get node -n passin-helm
@@ -15,3 +17,10 @@ list pods in helm: helm list -n passin-helm
 create clusters k8s:  k3d cluster create pass-in-api --servers 2
 
 info clusters k8s: kubeclt cluster-info
+
+delete pods in namespace: kubectl delete all --all -n NOME_DO_NAMESPACE
+
+argocd passowrd: kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+password: mzPo9pwkO6dFtogn
+
+kubectl delete ns passin-helm
