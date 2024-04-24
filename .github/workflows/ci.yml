@@ -39,10 +39,11 @@ jobs:
         uses: OpsVerseIO/image-updater-action@0.1.0
         with:
           valueFile: 'deploy/values.yaml'
-          propertyPath: 'backend.version'
+          propertyPath: 'image.tag'
           value: ${{ steps.image.outputs.version }}
           branch: main
           createPR: true
+          commitChanges: true
           message: 'Update Image Version to ${{ steps.image.outputs.version }}'
 
 
