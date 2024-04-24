@@ -8,7 +8,7 @@ image:
   repository: wellingtondevps/pass-in-api
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 4e4d6de
+  tag: "4e4d6de"
   port: 8080
 
 imagePullSecrets: []
