@@ -38,7 +38,7 @@ jobs:
       - name: Update Image Version in the related HelmChart values.yaml
         uses: OpsVerseIO/image-updater-action@0.1.0
         with:
-          valueFile: 'values.yaml'
+          valueFile: 'deploy/values.yaml'
           propertyPath: 'backend.version'
           value: ${{ steps.image.outputs.version }}
           branch: main
