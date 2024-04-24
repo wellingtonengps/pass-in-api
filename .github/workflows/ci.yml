@@ -43,7 +43,7 @@ jobs:
           value: ${{ steps.image.outputs.version }}
           branch: main
           createPR: true
-          commitChanges: true
+          commitChange: true
           message: 'Update Image Version to ${{ steps.image.outputs.version }}'
 
 
