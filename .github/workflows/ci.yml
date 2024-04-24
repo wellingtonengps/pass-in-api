@@ -35,13 +35,15 @@ jobs:
           docker tag wellingtondevps/pass-in-api:${{steps.generate_sha.outputs.sha}} wellingtondevps/pass-in-api:latest
           docker push wellingtondevps/pass-in-api:latest
 
-      - name: Update image tag
+      - name: Update Image Version in the related HelmChart values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
-          branch: main
-          valueFile: 'deploy/values.yaml'
-          propertyPath: 'image.tag'
-          value: ${{ steps.generate_sha.outputs.sha }}
-          commitChange: true
-          message: "new: Updated tag in values helm"
+            valueFile: 'deploy/values.yaml'
+            propertyPath: 'backend.version'
+            value: ${{ steps.image.outputs.version }}
+            branch: main
+            createPR: true
+            message: 'Update Image Version to ${{ steps.image.outputs.version }}'
+
+
 
